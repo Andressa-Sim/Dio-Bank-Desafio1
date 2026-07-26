@@ -1,10 +1,14 @@
-import { DioAccount } from "./DioAccount"
+import { DioAccount } from './DioAccount'
 
 export class PeopleAccount extends DioAccount {
-  doc_id: number
+  private readonly docId: number
 
-  constructor(doc_id: number, name: string, accountNumber: number){
+  constructor(docId: number, name: string, accountNumber: number) {
     super(name, accountNumber)
-    this.doc_id = doc_id
+    this.docId = docId
+  }
+
+  getDocId(): number {
+    return this.docId
   }
 }
